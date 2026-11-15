@@ -1,0 +1,119 @@
+.featured-product {
+    padding-bottom: 64px;
+}
+
+.featured-product__inner {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: hidden;
+    border-radius: var(--radius-medium);
+    background-color: #edf2ee;
+}
+
+.featured-product__media {
+    min-width: 0;
+    align-self: center;
+    background-color: var(--color-surface);
+}
+
+.featured-product__image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.featured-product__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 0;
+    padding: clamp(28px, 4vw, 56px);
+}
+
+.featured-product__eyebrow {
+    margin-bottom: 20px;
+    color: var(--color-primary);
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.featured-product__title {
+    max-width: 360px;
+    font-size: clamp(30px, 3.2vw, 46px);
+    line-height: 1.12;
+    letter-spacing: -0.045em;
+}
+
+.featured-product__description {
+    max-width: 350px;
+    margin-top: 20px;
+    color: var(--color-muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.featured-product__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    max-width: 100%;
+    margin-top: 28px;
+    padding: 12px 22px;
+    border: 0;
+    border-radius: var(--radius-small);
+    background-color: var(--color-primary);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-decoration: none;
+}
+
+.featured-product__link:disabled {
+    cursor: default;
+    opacity: 1;
+}
+
+.featured-product__link:not(:disabled):hover {
+    background-color: var(--color-primary-hover);
+}
+
+@media (max-width: 760px) {
+    .featured-product {
+        padding-bottom: 48px;
+    }
+
+    .featured-product__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-product__content {
+        grid-row: 1;
+        padding: 32px 24px;
+    }
+
+    .featured-product__title {
+        max-width: 400px;
+        font-size: clamp(30px, 6vw, 40px);
+    }
+
+    .featured-product__description {
+        max-width: 440px;
+    }
+
+    .featured-product__media {
+        grid-row: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-product__link {
+        width: 100%;
+    }
+}
